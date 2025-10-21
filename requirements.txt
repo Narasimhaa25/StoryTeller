@@ -1,0 +1,8 @@
+python-dotenv
+langchain
+langchain-google-genai
+google-generativeai
+langsmith
+flask
+streamlit
+gTTS

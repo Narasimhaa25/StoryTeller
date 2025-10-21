@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>🌙 Bedtime Story Chat</title>
+    <link rel="stylesheet" href="/static/chat.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <div id="app">
+        <header class="topbar">
+            <h1>🌙 Bedtime Story Chat</h1>
+            <div class="subtitle">Gemini 2.5 Flash • Judge • Memory • LangSmith</div>
+        </header>
+
+        <div id="chat"></div>
+
+        <form id="composer">
+            <input
+                type="text"
+                id="session"
+                placeholder="Session ID (default kiddo-01)"
+                value="kiddo-01"
+                class="session-box"
+            />
+
+            <div class="input-row">
+                <input type="text" id="message" autocomplete="off" placeholder="Send a message..." />
+                <button type="submit" id="send-btn">➤</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="/static/chat.js"></script>
+</body>
+</html>

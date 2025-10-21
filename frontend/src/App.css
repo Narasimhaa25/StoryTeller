@@ -1,0 +1,151 @@
+/* ===== ROOT COLORS ===== */
+:root {
+  --primary-blue: #3b71f3;
+  --primary-blue-dark: #2a5ddb;
+  --glass-white: rgba(255, 255, 255, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.45);
+  --transition-speed: 0.3s;
+}
+
+/* ===== FULL SCREEN BACKGROUND (BG-SLOW-B) ===== */
+.app-bg {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  background: linear-gradient(120deg, #0a0f2e, #1a255a, #0a0f2e);
+  background-size: 200% 200%;
+  animation: slowSky 18s ease infinite;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Stars Overlay */
+.app-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/stars.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.35;
+  animation: slowStars 35s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes slowSky {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes slowStars {
+  0% { opacity: 0.28; }
+  50% { opacity: 0.4; }
+  100% { opacity: 0.28; }
+}
+
+/* ===== LAYOUT (Sidebar Left, Chat Right) ===== */
+.sidebar {
+  width: 260px;
+  color: white;
+  padding: 20px;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  z-index: 20;
+}
+
+.chat-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  z-index: 20;
+}
+
+/* ===== CHAT BOX (Glass Effect S2) ===== */
+.chat-box {
+  height: 65vh;
+  overflow-y: auto;
+  padding: 18px;
+  background: var(--glass-white);
+  backdrop-filter: blur(14px);
+  border-radius: 14px;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.35);
+  margin-bottom: 12px;
+}
+
+.chat-box::-webkit-scrollbar {
+  width: 8px;
+}
+.chat-box::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 4px;
+}
+
+/* ===== BUBBLES ===== */
+.bubble {
+  padding: 10px 14px;
+  margin: 10px 0;
+  border-radius: 12px;
+  max-width: 83%;
+  line-height: 1.46;
+  font-size: 15px;
+}
+
+.bubble.user {
+  background: var(--primary-blue);
+  color: white;
+  margin-left: auto;
+  border-bottom-right-radius: 3px;
+}
+
+.bubble.assistant {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  color: #222;
+  border-bottom-left-radius: 3px;
+}
+
+/* ===== TYPING ===== */
+.typing {
+  font-style: italic;
+  color: #eee;
+  opacity: 0.9;
+  padding: 6px 4px;
+}
+
+/* ===== INPUT AREA ===== */
+.input-row {
+  display: flex;
+  gap: 10px;
+}
+
+.chat-input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #aaa;
+  transition: 0.2s;
+}
+
+.chat-input:focus {
+  border-color: var(--primary-blue);
+  outline: none;
+}
+
+.send-btn {
+  padding: 12px 20px;
+  border: none;
+  background: var(--primary-blue);
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.send-btn:hover {
+  background: var(--primary-blue-dark);
+  transform: translateY(-1px);
+}
