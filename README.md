@@ -56,3 +56,5 @@ Plaintext
 GEMINI_API_KEY="YOUR_API_KEY_HERE"
 LANGSMITH_TRACING="false"
 MEMORY_DB_PATH="sessions.json"
+<img width="1680" height="1050" alt="Screenshot 2025-10-22 at 01 24 38" src="https://github.com/user-attachments/assets/68c90f87-cbe1-44c9-8e63-ce65b2f9902a" />
+
