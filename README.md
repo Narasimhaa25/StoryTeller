@@ -2,6 +2,7 @@
 
 This project is a robust, tool-driven application built on the Gemini API, designed to generate short, warm, and strictly **child-safe** bedtime stories (ages 5–10). It utilizes a multi-step pipeline and specialized LLM tools for intelligent request routing, content generation, automatic safety judging, and secure story refinement.
 
+<img width="1680" height="1050" alt="Screenshot 2025-10-22 at 01 24 38" src="https://github.com/user-attachments/assets/dae37002-f0d9-4b0a-a4c0-98a80fa0093d" />
 ---
 
 ## ✨ Core Features & Tool-Based Architecture
@@ -42,19 +43,23 @@ To prevent users from introducing unsafe elements through refinement, the system
 Install the required Python packages:
 
 ```bash
-pip install langchain-google-genai python-dotenv
-# Note: The code relies on an external 'memory_store.py' file 
-# containing the JsonMessageHistoryStore class.
+              pip install langchain-google-genai python-dotenv
+              # Note: The code relies on an external 'memory_store.py' file 
+              # containing the JsonMessageHistoryStore class.
+              
+              
+              Environment Configuration
+              Create a file named .env in the project root to securely store your API key:
+              
+              Plaintext
+              
+              # .env file
+              GEMINI_API_KEY="YOUR_API_KEY_HERE"
+              LANGSMITH_TRACING="false"
+              MEMORY_DB_PATH="sessions.json"
 
 
-Environment Configuration
-Create a file named .env in the project root to securely store your API key:
 
-Plaintext
 
-# .env file
-GEMINI_API_KEY="YOUR_API_KEY_HERE"
-LANGSMITH_TRACING="false"
-MEMORY_DB_PATH="sessions.json"
-<img width="1680" height="1050" alt="Screenshot 2025-10-22 at 01 24 38" src="https://github.com/user-attachments/assets/68c90f87-cbe1-44c9-8e63-ce65b2f9902a" />
+
 
